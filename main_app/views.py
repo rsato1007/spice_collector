@@ -14,3 +14,13 @@ class About(TemplateView):
 
 class Index(TemplateView):
     template_name = "index.html"
+
+# Saving this for reference
+
+# class ArtistList(TemplateView):
+#     template_name = "artist_list.html"
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context["artists"] = artists # this is where we add the key into our context object for the view to use
+#         return context
