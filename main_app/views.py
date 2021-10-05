@@ -3,6 +3,7 @@ from django.views import View # <- View class to handle requests
 from django.http import HttpResponse # <- a class to handle sending a type of response
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 from .models import Spices
 
 # Create your views here.
@@ -27,3 +28,7 @@ class SpicesCreate(CreateView):
     fields = ['name', 'description', 'cuisine', 'shelf_life']
     template_name = "spices_create.html"
     success_url = "/index/"
+
+class SpicesDetail(DetailView):
+    model = Spices
+    template_name = "spice_detail.html"

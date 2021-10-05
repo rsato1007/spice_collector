@@ -3,7 +3,7 @@
     <h1>Every Spice You Can Imagine</h1>
     <div>
         {% for spice in spices %}
-        <h3>{{spice.name}}</h3>
+        <h3><a href="{% url 'spice_detail' spice.pk %}">{{spice.name}}</a></h3>
         <p>{{spice.description}}</p>
         <p>{{spice.cuisine}}</p>
         <p>Shelf Life: {{spice.shelf_life}}</p>
