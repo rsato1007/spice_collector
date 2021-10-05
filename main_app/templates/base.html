@@ -10,7 +10,12 @@
     <script src="{% static 'scripts/main.js' %}" defer></script>
 </head>
 <body>
-    <nav></nav>
+    <nav>
+        <a href="{% url 'home' %}">Spice Collector</a>
+        <a href="{% url 'index' %}">Full Spice List</a>
+        <a href="">Add a Spice</a>
+        <a href="{% url 'about' %}">About</a>
+    </nav>
     <div>
         {% block content %}{% endblock %}
     </div>
