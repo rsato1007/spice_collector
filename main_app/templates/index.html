@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Every Spice You Can Imagine</h1>
+    <div>
+        {% for spice in spices %}
+        <h3>{{spice.name}}</h3>
+        <p>{{spice.description}}</p>
+        <p>{{spice.cuisine}}</p>
+        <p>Shelf Life: {{spice.shelf_life}}</p>
+        {% endfor %}
+    </div>
 {% endblock %}
