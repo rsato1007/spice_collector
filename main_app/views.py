@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View # <- View class to handle requests
 from django.http import HttpResponse # <- a class to handle sending a type of response
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 
 from .models import Spices
@@ -38,4 +38,9 @@ class SpicesUpdate(UpdateView):
     model = Spices
     fields = ['name', 'description', 'cuisine', 'shelf_life']
     template_name = "spice_update.html"
+    success_url = "/index/"
+
+class SpicesDelete(DeleteView):
+    model = Spices
+    template_name = "spice_delete_confirm.html"
     success_url = "/index/"

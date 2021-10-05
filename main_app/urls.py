@@ -12,6 +12,7 @@ urlpatterns = [
     # Individual Spice Route
     path('spices/<int:pk>', views.SpicesDetail.as_view(), name="spice_detail"),
     # Edit Spice Path
-    path('spices/<int:pk>/update', views.SpicesUpdate.as_view(), name="spice_update")
+    path('spices/<int:pk>/update', views.SpicesUpdate.as_view(), name="spice_update"),
     # Delete Spice Path
+    path('spices/<int:pk>/delete', views.SpicesDelete.as_view(), name="spice_delete")
 ]

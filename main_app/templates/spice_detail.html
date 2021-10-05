@@ -6,5 +6,6 @@
     <p>{{spices.cuisine}}</p>
     <p>Shelf Life: {{spices.shelf_life}}</p>
     <a href="{% url 'spice_update' spices.pk %}">Update Spice</a>
+    <a href="{% url 'spice_delete' spices.pk %}">Delete Spice</a>
 </div>
 {% endblock %}
