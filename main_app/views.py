@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View # <- View class to handle requests
 from django.http import HttpResponse # <- a class to handle sending a type of response
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
 from .models import Spices
 
 # Create your views here.
@@ -20,3 +21,9 @@ class Index(TemplateView):
         context = super().get_context_data(**kwargs)
         context["spices"] = Spices.objects.all() # Here we are using the model to query the database for us
         return context
+
+class SpicesCreate(CreateView):
+    model = Spices
+    fields = ['name', 'description', 'cuisine', 'shelf_life']
+    template_name = "spices_create.html"
+    success_url = "/index/"

@@ -6,8 +6,9 @@ urlpatterns = [
     # Main Page Path
     path('', views.Home.as_view(), name="home"),
     path('about/', views.About.as_view(), name="about"),
-    path('index/', views.Index.as_view(), name="index")
+    path('index/', views.Index.as_view(), name="index"),
     # Create New Spice Path
+    path('spices/new/', views.SpicesCreate.as_view(), name="spice_create")
     # Individual Spice Route
     # Edit Spice Path
     # Delete Spice Path
