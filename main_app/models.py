@@ -12,3 +12,10 @@ class Spices(models.Model):
     
     class Meta:
         ordering = ['name']
+
+class Ingredients(models.Model):
+    name = models.CharField(max_length=50)
+    spice = models.ForeignKey(Spices, on_delete=models.CASCADE, related_name="ingredients")
+
+    def __str__(self):
+        return self.name
